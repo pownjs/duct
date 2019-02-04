@@ -87,7 +87,7 @@ Options:
 
 There are cases when we need to perform an attack such as sql injection, XSS, XXE or SSRF but the target application is not providing any indication that it is vulnerable. One way to be sure if vulnerable is to try to inject a valid attack vector which forces a DNS resolver to ask for an attack controlled domain. If the resolution is successful, the attack will be considered successful.
 
-> **NOTE**: You might be familiar with Burp Collaborator which provides a similar service for profesional usage.
+> **NOTE**: You might be familiar with Burp Collaborator which provides a similar service for customers.
 
 First, we need a disposable dns name to resolve:
 
