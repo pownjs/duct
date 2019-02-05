@@ -85,7 +85,7 @@ Options:
 
 ## Tutorial
 
-There are cases when we need to perform an attack such as sql injection, XSS, XXE or SSRF but the target application is not providing any indication that it is vulnerable. One way to be sure if vulnerable is to try to inject a valid attack vector which forces a DNS resolver to ask for an attack controlled domain. If the resolution is successful, the attack will be considered successful.
+There are cases when we need to perform an attack such as sql injection, XSS, XXE or SSRF but the target application is not providing any indication that it is vulnerable. One way to be sure if a vulnerability is present is to try to inject a valid attack vector which forces a DNS resolver to ask for an attack controlled domain. If the resolution is successful, the attack will be considered successful.
 
 > **NOTE**: You might be familiar with Burp Collaborator which provides a similar service for customers.
 
@@ -97,7 +97,7 @@ $ pown duct dns
 
 ![screenshot](https://media.githubusercontent.com/media/pownjs/pown-duct/master/screenshots/01.png)
 
-Using the provided DNS, compose your payload. For example, the following could trigger trigger DNS resolution if XXE vulnerability is present.
+Using the provided DNS, compose your payload. For example, the following could trigger trigger a DNS resolution if a XXE vulnerability is present.
 
 ```xml
 <!DOCTYPE foo [
