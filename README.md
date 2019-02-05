@@ -4,7 +4,7 @@
 
 # Pown Duct
 
-Essential tool for finding blind injection attacks.
+Essential tool for finding blind injection attacks using DNS side-channels.
 
 ## Credits
 
